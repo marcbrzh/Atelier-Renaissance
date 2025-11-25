@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Luxury’AutoPaint — Peinture haut de gamme pour véhicules de prestige à Lorient">
-  <title>Luxury’AutoPaint — Peinture haut de gamme pour véhicules de prestige à Lorient"</title>
+  <meta name="description" content="Luxury’AutoPaint — Atelier de peinture haut de gamme pour véhicules de prestige à Lorient. Finitions irréprochables, travail en cabine, respect des lignes d’origine.">
+  <title>Luxury’AutoPaint — Peinture haut de gamme pour véhicules de prestige à Lorient</title>
 
   <!-- Typo : Playfair Display + Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
@@ -16,122 +16,163 @@
 <body class="index-page">
   
   <header>
-    <h2 style="font-family: 'Playfair Display', serif;">
-      Luxury<span style="color:#c92735;">’</span>AutoPaint
+    <h2 class="logo">
+      Luxury<span class="accent">’</span>AutoPaint
     </h2>
     <div class="hamburger" id="hamburger">
       <span></span>
     </div>
-    <nav id="main-nav">
+    <nav id="main-nav" class="nav-premium">
       <a href="index.html">Accueil</a>
-      <a href="#about">À propos</a>
-      <a href="menu.html">Menu</a>
-      <a href="#contact">Contact</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="services.html">Services</a>
+      <a href="#atelier">Atelier</a>
+      <a href="https://wa.me/[NUMERO]" class="cta-nav">WhatsApp</a>
     </nav>
   </header>
 
-  <section class="hero" style="background: url('images/index-hero.jpg') center/cover no-repeat;">
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/hero.jpg');">
     <div class="hero-content">
       <h1>Peinture haut de gamme pour véhicules de prestige à Lorient</h1>
-      <p>Finitions irréprochables, travail en cabine, respect des lignes d’origine.</p>
+      <p>Finitions irréprochables, travail en cabine, respect des lignes d’origine. Confiez votre véhicule à un atelier spécialisé dans les carrosseries d’exception.</p>
       <a href="#contact" class="btn">Demander un devis</a>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="about-text">
-      <h2>Restaurant à Lorient</h2>
+  <!-- ATELIER / INTRO -->
+  <section id="atelier" class="atelier">
+    <div class="atelier-text">
+      <h2>Atelier spécialisé pour véhicules de prestige</h2>
       <p>
-        Bienvenue au <strong>Seattle’Kitchen</strong> ! Ici, la cuisine familiale americaine se savoure dans chaque assiette : ingrédients locaux, plats qui rechauffent le coeur. Une expérience culinaire simple, gourmande et inoubliable.
+        <strong>Luxury’AutoPaint</strong> est un atelier spécialisé dans la peinture et la
+        réparation de carrosserie pour véhicules de prestige, de sport et de collection
+        à Lorient. Chaque intervention est préparée, masquée et réalisée comme si le véhicule
+        sortait de concession.
+      </p>
+      <p>
+        De la simple retouche à la reprise complète d’une carrosserie, l’objectif reste le même :
+        un rendu irréprochable, des teintes parfaitement accordées et une finition miroir durable.
       </p>
     </div>
   </section>
 
-  <section id="menu" class="menu">
-    <h2>Nos Incontournables</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="images/menu-mac.png" alt="Le Seattle’Mac" loading="lazy">
-        <h3>Le Seattle’Mac</h3>
-        <p>Macaronis nappés de cheddar fondant Tillamook, lardons fumés et pointe de beurre.</p>
-        <span class="price">14,90 €</span>
-      </div>
-
-      <div class="menu-item">
-        <img src="images/menu-sloppy.png" alt="Le Sloppy’Joe" loading="lazy">
-        <h3>Le Sloppy’Joe</h3>
-        <p>Bœuf effiloché mijoté dans une sauce tomate légèrement épicée, oignons caramélisés et pain brioché doré.</p>
-        <span class="price">15,50 €</span>
-      </div>
-
-      <div class="menu-item">
-        <img src="images/menu-meatloaf.png" alt="Le Meat’Loaf" loading="lazy">
-        <h3>Le Meat’Loaf</h3>
-        <p>Pain de viande façon US, purée de pommes de terre au cheddar et gravy maison.</p>
-        <span class="price">14,90 €</span>
-      </div>
-
-      <div class="menu-item">
-        <img src="images/menu-ribs.png" alt="Les Ribs’BBQ" loading="lazy">
-        <h3>Les Ribs’BBQ</h3>
-        <p>Travers de porc caramélisés au four, sauce barbecue artisanale et coleslaw maison.</p>
-        <span class="price">18,90 €</span>
-      </div>
-    </div>
-    <div>
-      <a href="menu.html" class="btn">Menu Complet</a>
-    </div>
-  </section>
-
-  <section id="avis" class="avis">
-    <h2>Ils ont adoré</h2>
-    <div class="avis-grid">
-      <div class="avis-item">
-        <p>“Un vrai goût de cuisine familiale américaine sans quitter la Bretagne. Service au top et plats généreux.”</p>
-        <span>— Lucie, Lorient</span>
-      </div>
-      <div class="avis-item">
-        <p>“Ambiance cosy, ribs incroyables, et le mac & cheese… une tuerie !”</p>
-        <span>— Thomas, Guidel</span>
-      </div>
-      <div class="avis-item">
-        <p>“La cuisine américaine est donc plus riche que ce que je croyais, belle découverte. Accueil parfait.”</p>
-        <span>— Mélanie, Ploemeur</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <label for="name">Nom</label>
-      <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Votre message ou réservation..." required></textarea>
-
-      <button type="submit" class="btn">Envoyer</button>
-    </form>
-  </section>
-
-  <section class="find-us" style="text-align:center; padding: 32px 0 8px 0;">
-    <h2>Nous trouver</h2>
-    <p>
-      7 Rue Dr Waquet, 56100 Lorient<br>
-      Ouvert du mardi au samedi, 12h–14h & 19h–22h
+  <!-- BLOCS SERVICES PRINCIPAUX (inspiré de Crash / Body / Detailing) -->
+  <section id="services" class="services">
+    <h2>Nos domaines d’intervention</h2>
+    <p class="section-intro">
+      Nous accompagnons les passionnés et propriétaires exigeants sur tous les aspects liés
+      à la peinture et à la carrosserie de leurs véhicules haut de gamme.
     </p>
-    <a href="https://maps.google.com/?q=7+rue+Dr+Waquet,+56100+Lorient" target="_blank" class="btn" style="margin-top:12px;">Voir sur Google Maps</a>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/service-crash.jpg" alt="Réparations après choc et redressage de carrosserie" loading="lazy">
+        <h3>Réparations après choc & carrosserie</h3>
+        <p>
+          Prise en charge des impacts, enfoncements, rayures profondes et dégâts de stationnement.
+          Redressage, préparation et mise en peinture pour retrouver une carrosserie parfaitement alignée.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/service-bodypaint.jpg" alt="Reprise complète de peinture sur véhicule de prestige" loading="lazy">
+        <h3>Reprises complètes & peinture intégrale</h3>
+        <p>
+          Reprise globale de la carrosserie en cabine, correction des défauts,
+          préparation minutieuse et application de systèmes peinture haut de gamme
+          pour un rendu uniforme et profond.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/service-detailing.jpg" alt="Finitions, detailing et upgrades esthétiques" loading="lazy">
+        <h3>Finitions, detailing & upgrades</h3>
+        <p>
+          Corrections de vernis, accentuation de brillance, peinture de jantes et détails spécifiques
+          (étriers, éléments de carrosserie) pour sublimer les lignes de votre véhicule.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/service-restauration.jpg" alt="Restauration esthétique de véhicules de collection" loading="lazy">
+        <h3>Restauration véhicules de collection</h3>
+        <p>
+          Rénovation esthétique de véhicules anciens et youngtimers, avec respect des teintes d’origine,
+          des lignes de carrosserie et du caractère historique du modèle.
+        </p>
+      </div>
+    </div>
+
+    <!-- LISTE DE SERVICES (inspirée de leur SERVICE LIST) -->
+    <div class="service-list-wrapper">
+      <h3>Services complémentaires</h3>
+      <ul class="service-list">
+        <li>Conseils personnalisés sur chaque projet</li>
+        <li>Devis détaillés et gratuits</li>
+        <li>Accompagnement sur les dossiers d’assurance</li>
+        <li>Suivi des travaux et échanges réguliers pendant l’intervention</li>
+        <li>Nettoyage extérieur du véhicule après travaux</li>
+        <li>Solutions de dépôt / récupération du véhicule à définir ensemble</li>
+      </ul>
+    </div>
+
+    <div class="services-cta">
+      <a href="#contact" class="btn">Discuter de votre projet</a>
+    </div>
   </section>
+
+  <!-- APERÇU RÉALISATIONS / INSPIRÉ DE LEUR GALLERY + HISTORY / FULL RESTORATION -->
+  <section id="realisations" class="realisations">
+    <h2>Réalisations & restauration</h2>
+    <p class="section-intro">
+      Avant/après, restaurations de véhicules anciens, reprises complètes sur sportives modernes :
+      l’atelier intervient sur des projets variés avec le même niveau d’exigence.
+    </p>
+
+    <div class="realisations-grid">
+      <div class="realisations-item">
+        <img src="images/realisations-sportive.jpg" alt="Reprise complète sur coupé sportif" loading="lazy">
+        <h3>Coupé sportif</h3>
+        <p>
+          Reprise complète de la carrosserie après choc, réalignement des panneaux et nouvelle teinte
+          appliquée en cabine pour un rendu digne d’une sortie de concession.
+        </p>
+      </div>
+
+      <div class="realisations-item">
+        <img src="images/realisations-classic.jpg" alt="Restauration esthétique de véhicule de collection" loading="lazy">
+        <h3>Véhicule de collection</h3>
+        <p>
+          Décapage, préparation et application d’une teinte d’inspiration d’époque,
+          en conservant le caractère et les lignes du modèle d’origine.
+        </p>
+      </div>
+
+      <div class="realisations-item">
+        <img src="images/realisations-jantes.jpg" alt="Peinture de jantes et détails esthétiques" loading="lazy">
+        <h3>Jantes & détails</h3>
+        <p>
+          Travail sur les jantes, étriers et éléments spécifiques pour renforcer les contrastes
+          et mettre en valeur le design global du véhicule.
+        </p>
+      </div>
+    </div>
+
+    <div class="realisations-cta">
+      <a href="realisations.html" class="btn">Voir plus de projets</a>
+    </div>
+  </section>
+
 
   <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d670.6686991548908!2d-3.365330330370925!3d47.7489641999326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48105e514c8c1791%3A0xbcef4506190fffe8!2s7%20Rue%20Dr%20Waquet%2C%2056100%20Lorient!5e0!3m2!1sen!2sfr!4v1760190794935!5m2!1sen!2sfr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- Remplace la source de la map avec celle de l’atelier -->
+    <iframe src="https://www.google.com/maps/embed?pb=[CODE_EMBED_GOOGLE_MAPS]" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
+
   <script src="js/script.js"></script>
   <footer>
-    <p>© 2025 Seattle’Kitchen — Créé par <a href="#" class="footer-link">MarcBreizh Web</a></p>
+    <p>© 2025 Luxury’AutoPaint — Site réalisé par <a href="#" class="footer-link">MarcBreizh Web</a></p>
   </footer>
 
 </body>
