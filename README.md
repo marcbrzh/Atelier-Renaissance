@@ -1,6 +1,6 @@
-# Seattle'Kitchen — Site vitrine statique
+# Atelier Renaissance — Site vitrine statique
 
-Ce dépôt contient un modèle de site vitrine en français pour un restaurant fictif, **Seattle'Kitchen**, inspiré d'une comfort food américaine revisitée avec des produits bretons. Le projet est 100 % statique (HTML/CSS/JS), prêt à être ouvert dans un navigateur ou déployé sur n'importe quel hébergement statique (GitHub Pages, Netlify, Vercel, etc.).
+Ce dépôt contient un modèle de site vitrine en français pour un restaurant fictif, **Atelier Renaissance**, inspiré d'une comfort food américaine revisitée avec des produits bretons. Le projet est 100 % statique (HTML/CSS/JS), prêt à être ouvert dans un navigateur ou déployé sur n'importe quel hébergement statique (GitHub Pages, Netlify, Vercel, etc.).
 
 ## Pages incluses
 - **`index.html`** : page d'accueil avec héros, présentation rapide, plats phares, témoignages clients, formulaire de contact et bloc « Nous trouver ».
@@ -28,7 +28,7 @@ Ce dépôt contient un modèle de site vitrine en français pour un restaurant f
 1. **Cloner ou télécharger** le dépôt puis ouvrir le dossier dans votre éditeur :
    ```bash
    git clone <url-du-depot>
-   cd seattlekitchen
+   cd atelier-renaissance
    ```
 2. **Lancer en local** en ouvrant `index.html` ou `menu.html` dans votre navigateur (ou via l'extension Live Server de VS Code).
 3. **Personnaliser** :

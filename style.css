@@ -705,7 +705,7 @@ footer { background:#050608; color:#ddd; text-align:center; padding:1.5rem 1rem;
   display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; position:relative; overflow:hidden;
 }
 .realisations-page .hero::after {
-  content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+  content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
 }
 .realisations-page .hero-content { position:relative; z-index:1; max-width:900px; padding:0 1rem; }
 .realisations-page .hero h1 { font-family:'Fraunces', serif; font-size:2.1rem; margin-bottom:1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,1); }
