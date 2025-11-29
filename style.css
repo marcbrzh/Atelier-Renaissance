@@ -29,11 +29,36 @@ header {
   text-align: center;
   box-shadow:0 2px 6px rgba(0,0,0,0.25);
 }
+
+header .logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+header .logo-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+header .logo {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
 header > * {
   align-items: center;
   display: flex;
   height: 100%;
 }
+
 .hamburger {
   display: flex;
   align-items: center;
@@ -162,7 +187,7 @@ footer { background:#050608; color:#ddd; text-align:center; padding:1.5rem 1rem;
   display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; position:relative; overflow:hidden;
 }
 .index-page .hero::after {
-  content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+  content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0, 0, 0, 0.99));
 }
 .index-page .hero-content { position:relative; z-index:1; max-width:900px; padding:0 1rem; }
 .index-page .hero-content h1,
@@ -864,4 +889,68 @@ footer { background:#050608; color:#ddd; text-align:center; padding:1.5rem 1rem;
 }
 @media (min-width:900px) {
   .atelier-page .hero, .services-page .hero, .realisations-page .hero { height:80vh; }
+}
+
+/* === Unified Card Hover Animation === */
+.service-card,
+.realisations-item,
+.avis-item,
+.equipement-card,
+.service-atelier-item,
+.localisation-info,
+.complementaire-card,
+.avant-apres-item,
+.etude-card,
+.temoignage-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor:pointer;
+}
+
+.service-card:hover,
+.realisations-item:hover,
+.avis-item:hover,
+.equipement-card:hover,
+.service-atelier-item:hover,
+.localisation-info:hover,
+.complementaire-card:hover,
+.avant-apres-item:hover,
+.etude-card:hover,
+.temoignage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.5);
+  border-color: rgba(199,167,91,0.7);
+  cursor:pointer;
+}
+
+/* Remove duplicate/conflicting hover states */
+.index-page .service-card:hover { 
+  /* Uses unified animation above */ 
+}
+.index-page .realisations-item:hover {
+  /* Uses unified animation above */
+}
+.index-page .avis-item:hover {
+  /* Uses unified animation above */
+}
+.atelier-page .equipement-card:hover { 
+  /* Uses unified animation above */ 
+}
+.atelier-page .service-atelier-item:hover {
+  /* Uses unified animation above */
+}
+.atelier-page .localisation-info:hover {
+  /* Uses unified animation above */
+}
+.services-page .complementaire-card:hover { 
+  /* Uses unified animation above */ 
+}
+.realisations-page .avant-apres-item:hover {
+  /* Uses unified animation above */
+}
+.realisations-page .etude-card:hover { 
+  /* Uses unified animation above */ 
+}
+.realisations-page .temoignage-card:hover {
+  /* Uses unified animation above */
 }
