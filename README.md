@@ -1,42 +1,51 @@
-# Atelier Renaissance — Site vitrine statique
+# Atelier Renaissance — Site vitrine pour carrosserie et peinture haut de gamme
 
-Ce dépôt contient un modèle de site vitrine en français pour un restaurant fictif, **Atelier Renaissance**, inspiré d'une comfort food américaine revisitée avec des produits bretons. Le projet est 100 % statique (HTML/CSS/JS), prêt à être ouvert dans un navigateur ou déployé sur n'importe quel hébergement statique (GitHub Pages, Netlify, Vercel, etc.).
+Bienvenue dans le dépôt du site vitrine statique d’**Atelier Renaissance**, un garage spécialisé dans la peinture, la restauration et la retouche de carrosseries de véhicules de luxe et de collection. Le site est entièrement HTML/CSS/JS, prêt à ouvrir dans un navigateur ou à déployer sur tout hébergement statique.
 
-## Pages incluses
-- **`index.html`** : page d'accueil avec héros, présentation rapide, plats phares, témoignages clients, formulaire de contact et bloc « Nous trouver ».
-- **`menu.html`** : carte détaillée (burgers, plats signatures, accompagnements, desserts) avec un héros dédié.
+## Ce que vous trouverez
+- **Site complet clé en main** : pages "Accueil", "Services", "Réalisations" et "Atelier" déjà mises en forme pour présenter l’offre, l’expertise et les atouts du garage.
+- **Charte premium** : typographies élégantes, palette sombre et dorée, blocs structurés (héros, grilles de services, avant/après, FAQ, CTA WhatsApp).
+- **Navigation responsive** : menu hamburger, ancrages internes, CTA en évidence sur mobile et desktop.
+- **Performances et compatibilité** : aucun build requis, fonctionne sur GitHub Pages, Netlify, Vercel ou un bucket S3.
 
-## Fonctionnalités clés
-- **Navigation responsive** avec hamburger et blocage du scroll en arrière-plan quand le menu est ouvert (`js/script.js`, classe `body.no-scroll`).
-- **Identité visuelle cohérente** : palette bordeaux/crème, typographies Google Fonts (Playfair Display + Roboto).
-- **Mise en avant des plats** : grilles d'items avec visuels, descriptions et prix.
-- **Contact prêt à l'emploi** : formulaire branché sur Formspree (remplacer `yourformid` par votre ID) et lien Google Maps vers l'adresse du restaurant.
-
-## Arborescence rapide
+## Structure du projet
 ```
-/
-├─ index.html        # Page d'accueil
-├─ menu.html         # Carte complète
-├─ style.css         # Styles globaux + spécifiques par page
+/                  # Racine du site statique
+├─ index.html      # Page d'accueil avec héro, services phares, réalisations et FAQ
+├─ nos-services.html   # Détails des prestations (réparations, reprises intégrales, detailing, restauration)
+├─ realisations.html   # Galerie avant/après pour mettre en avant les projets
+├─ atelier.html        # Présentation des équipements et de la méthode de travail
+├─ style.css           # Styles globaux et composants (héros, services, FAQ, footer, responsive)
 ├─ js/
-│  └─ script.js      # Ouverture/fermeture du menu mobile
-├─ images/           # Visuels (héros, plats, favicon, etc.)
-└─ SITE_AUDIT.md     # Audit existant et backlog de pistes d'amélioration
+│  └─ script.js        # Menu mobile, verrouillage du scroll, interactions de base
+└─ images/             # Visuels (héros, services, réalisations, favicon)
 ```
 
-## Prise en main
-1. **Cloner ou télécharger** le dépôt puis ouvrir le dossier dans votre éditeur :
-   ```bash
-   git clone <url-du-depot>
-   cd atelier-renaissance
-   ```
-2. **Lancer en local** en ouvrant `index.html` ou `menu.html` dans votre navigateur (ou via l'extension Live Server de VS Code).
-3. **Personnaliser** :
-   - Remplacez les textes (nom du restaurant, descriptions, prix) dans les fichiers HTML.
-   - Adaptez les couleurs et polices dans `style.css`.
-   - Remplacez `yourformid` dans `index.html` par votre ID Formspree pour activer le formulaire.
-   - Mettez vos propres images dans `images/` (préférez WebP/AVIF pour de meilleures performances).
+## Personnalisation rapide
+1. **Coordonnées & CTA**  
+   - Remplacez le placeholder `[NUMERO]` dans les liens WhatsApp des pages HTML par le numéro du garage (format international sans espaces).  
+   - Mettez à jour l’adresse, l’email et le lien Google Maps dans la section contact.
+2. **Textes & métadonnées**  
+   - Ajustez les titres, sous-titres et balises `<meta name="description">` pour refléter votre positionnement local (ville, marques suivies, garanties).  
+   - Adaptez les FAQ : délais moyens, garanties peinture, gestion assurance, marques de peinture utilisées.
+3. **Visuels**  
+   - Remplacez les fichiers de `images/` par vos photos. Préférez WebP/AVIF ou JPEG haute qualité.  
+   - Conservez des ratios proches pour éviter de casser les mises en page (blocs avant/après, grilles de services).
+4. **Identité visuelle**  
+   - Modifiez la palette et les typographies dans `style.css`. Les classes sont organisées par section pour faciliter les ajustements.  
+   - Mettez à jour le favicon dans `images/` si nécessaire.
 
-## Déploiement rapide (exemples)
-- **GitHub Pages** : poussez la branche principale, puis activez Pages sur le dossier racine du dépôt.
-- **Netlify/Vercel** : importez le dépôt, choisissez un déploiement statique (pas de build requis), la racine `/` suffit.
+## Mise en ligne
+- **Prévisualisation locale** : ouvrez `index.html` dans votre navigateur ou utilisez une extension de type Live Server pour recharger automatiquement. Aucun serveur ni dépendance n’est requis.  
+- **GitHub Pages** : poussez la branche principale et activez Pages sur le dossier racine.  
+- **Netlify / Vercel / S3** : déposez simplement le dossier ; aucun build à configurer.
+
+## Bonnes pratiques SEO & qualité
+- Renseignez systématiquement les attributs `alt` des images lors de vos remplacements et utilisez des noms de fichiers explicites.  
+- Compressez les visuels (objectif : < 200 Ko pour les images clés) pour préserver les temps de chargement.  
+- Vérifiez la hiérarchie des titres (H1/H2/H3) et les metas sur chaque page pour le référencement local.  
+- Testez l’affichage mobile (≤ 768 px) et desktop après modification des visuels ou des CTA.  
+- Ajoutez éventuellement Google Analytics ou une solution d’analytics sans tracker lourd si vous avez besoin de mesure d’audience.
+
+## Support et évolutions
+Pour aller plus loin (prise de rendez-vous en ligne, blog d’actualités, suivi de projet client), dupliquez le dépôt et ajoutez vos propres sections ou intégrations.
