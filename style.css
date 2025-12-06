@@ -47,6 +47,7 @@ header {
   justify-content:space-between;
   align-items:center;
   box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  animation:slideInDown 0.5s ease-out;
 }
 
 header > * {
@@ -59,7 +60,7 @@ header > * {
   display:flex;
   align-items:center;
   height:100%;
-  transition:opacity 0.2s;
+  transition:opacity 0.3s ease;
 }
 .logo-link:hover { opacity:0.8; }
 
@@ -134,7 +135,7 @@ nav a {
   font-weight:500;
   font-size:0.8rem !important;
   border-radius:6px;
-  transition:color 0.18s;
+  transition:color 0.3s ease;
   width:100%;
   display:block;
   letter-spacing:0.04em;
@@ -161,6 +162,7 @@ nav a.active::after {
   height:2px;
   border-radius:999px;
   background:#c7a45b;
+  animation:scaleIn 0.3s ease-out;
 }
 
 .cta-nav {
@@ -228,14 +230,36 @@ nav a.active::after {
   border:none;
   border-radius:999px;
   font-weight:600;
-  transition:background 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition:background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   display:inline-block;
   box-shadow:0 8px 18px rgba(0,0,0,0.25);
   cursor:pointer;
+  position:relative;
+  overflow:hidden;
 }
+
+.btn::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transform:translate(-50%, -50%);
+  transition:width 0.6s, height 0.6s;
+}
+
 .btn:hover {
   background:#9b7f42;
   transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.35);
+}
+
+.btn:active::before {
+  width:300px;
+  height:300px;
 }
 
 /* ========================================================= */
@@ -248,6 +272,7 @@ footer {
   padding:4rem 1.5rem 1.5rem;
   margin-top:6rem;
   border-top:1px solid rgba(199,167,91,0.2);
+  animation:slideInUp 0.6s ease-out;
 }
 
 .footer-content {
@@ -1765,4 +1790,607 @@ footer {
   .realisations-page .hero {
     height:80vh;
   }
+}
+
+/* ========================================================= */
+/* === ANIMATION KEYFRAMES ================================ */
+/* ========================================================= */
+
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes slideInUp {
+  from { 
+    opacity:0; 
+    transform:translateY(30px); 
+  }
+  to { 
+    opacity:1; 
+    transform:translateY(0); 
+  }
+}
+
+@keyframes slideInDown {
+  from { 
+    opacity:0; 
+    transform:translateY(-30px); 
+  }
+  to { 
+    opacity:1; 
+    transform:translateY(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity:0; 
+    transform:translateX(-40px); 
+  }
+  to { 
+    opacity:1; 
+    transform:translateX(0); 
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity:0; 
+    transform:translateX(40px); 
+  }
+  to { 
+    opacity:1; 
+    transform:translateX(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity:0; 
+    transform:scale(0.95); 
+  }
+  to { 
+    opacity:1; 
+    transform:scale(1); 
+  }
+}
+
+@keyframes floatIn {
+  from { 
+    opacity:0; 
+    transform:translateY(20px); 
+  }
+  to { 
+    opacity:1; 
+    transform:translateY(0); 
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position:-1000px 0; }
+  100% { background-position:1000px 0; }
+}
+
+/* Reduce motion for users with motion sensitivity */
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
+}
+
+/* ========================================================= */
+/* === GLOBAL ANIMATIONS ================================== */
+/* ========================================================= */
+
+/* Smooth scroll behavior */
+html { scroll-behavior:smooth; }
+
+/* Global fade-in for elements with animation class */
+.animate-fade-in {
+  animation:fadeIn 0.6s ease-out forwards;
+  opacity:0;
+}
+
+.animate-slide-up {
+  animation:slideInUp 0.7s ease-out forwards;
+  opacity:0;
+}
+
+.animate-slide-down {
+  animation:slideInDown 0.7s ease-out forwards;
+  opacity:0;
+}
+
+.animate-slide-left {
+  animation:slideInLeft 0.7s ease-out forwards;
+  opacity:0;
+}
+
+.animate-slide-right {
+  animation:slideInRight 0.7s ease-out forwards;
+  opacity:0;
+}
+
+.animate-scale-in {
+  animation:scaleIn 0.6s ease-out forwards;
+  opacity:0;
+}
+
+/* Staggered animation delays for lists/grids */
+.animate-fade-in:nth-child(1) { animation-delay:0.1s; }
+.animate-fade-in:nth-child(2) { animation-delay:0.2s; }
+.animate-fade-in:nth-child(3) { animation-delay:0.3s; }
+.animate-fade-in:nth-child(4) { animation-delay:0.4s; }
+.animate-fade-in:nth-child(5) { animation-delay:0.5s; }
+.animate-fade-in:nth-child(6) { animation-delay:0.6s; }
+.animate-fade-in:nth-child(7) { animation-delay:0.7s; }
+.animate-fade-in:nth-child(8) { animation-delay:0.8s; }
+
+.animate-slide-up:nth-child(1) { animation-delay:0.1s; }
+.animate-slide-up:nth-child(2) { animation-delay:0.2s; }
+.animate-slide-up:nth-child(3) { animation-delay:0.3s; }
+.animate-slide-up:nth-child(4) { animation-delay:0.4s; }
+.animate-slide-up:nth-child(5) { animation-delay:0.5s; }
+.animate-slide-up:nth-child(6) { animation-delay:0.6s; }
+
+/* ========================================================= */
+/* === HEADER ANIMATIONS ================================== */
+/* ========================================================= */
+
+header {
+  background:#050608;
+  color:#fff;
+  padding:1rem 2rem;
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  animation:slideInDown 0.5s ease-out;
+}
+
+.logo-link {
+  display:flex;
+  align-items:center;
+  height:100%;
+  transition:opacity 0.3s ease;
+}
+.logo-link:hover { opacity:0.8; }
+
+nav a {
+  position:relative;
+  color:#fff;
+  font-weight:500;
+  font-size:0.8rem !important;
+  border-radius:6px;
+  transition:color 0.3s ease;
+  width:100%;
+  display:block;
+  letter-spacing:0.04em;
+  text-transform:uppercase !important;
+  padding:0.75rem 1rem;
+  white-space:nowrap;
+}
+
+nav a:hover,
+nav a:focus { 
+  color:#c7a45b;
+}
+
+nav a.active::after {
+  content:"";
+  position:absolute;
+  left:5%;
+  bottom:0.4rem;
+  width:25%;
+  height:2px;
+  border-radius:999px;
+  background:#c7a45b;
+  animation:scaleIn 0.3s ease-out;
+}
+
+/* ========================================================= */
+/* === BUTTON ANIMATIONS ================================== */
+/* ========================================================= */
+
+.btn {
+  background:#c7a45b;
+  color:#fff;
+  padding:0.75rem 1.5rem;
+  border:none;
+  border-radius:999px;
+  font-weight:600;
+  transition:background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display:inline-block;
+  box-shadow:0 8px 18px rgba(0,0,0,0.25);
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transform:translate(-50%, -50%);
+  transition:width 0.6s, height 0.6s;
+}
+
+.btn:hover {
+  background:#9b7f42;
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.35);
+}
+
+.btn:active::before {
+  width:300px;
+  height:300px;
+}
+
+/* ========================================================= */
+/* === HERO SECTION ANIMATIONS ============================= */
+/* ========================================================= */
+
+.index-page .hero-content h1 {
+  animation:slideInUp 0.8s ease-out;
+}
+
+.index-page .hero-content p {
+  animation:slideInUp 0.8s ease-out 0.15s both;
+}
+
+.index-page .hero .btn {
+  animation:slideInUp 0.8s ease-out 0.3s both;
+}
+
+.realisations-page .hero-content h1 {
+  animation:slideInUp 0.8s ease-out;
+}
+
+.realisations-page .hero-content p {
+  animation:slideInUp 0.8s ease-out 0.15s both;
+}
+
+.services-page .hero-content h1 {
+  animation:slideInUp 0.8s ease-out;
+}
+
+.services-page .hero-content p {
+  animation:slideInUp 0.8s ease-out 0.15s both;
+}
+
+.atelier-page .hero-content h1 {
+  animation:slideInUp 0.8s ease-out;
+}
+
+.atelier-page .hero-content p {
+  animation:slideInUp 0.8s ease-out 0.15s both;
+}
+
+/* ========================================================= */
+/* === SECTION HEADING ANIMATIONS ======================== */
+/* ========================================================= */
+
+.index-page section h2,
+.services-page section h2,
+.realisations-page section h2,
+.atelier-page section h2 {
+  animation:slideInUp 0.7s ease-out both;
+}
+
+.section-intro {
+  animation:fadeIn 0.7s ease-out 0.2s both;
+}
+
+/* ========================================================= */
+/* === CARD & ITEM ANIMATIONS ============================= */
+/* ========================================================= */
+
+.index-page .service-card,
+.index-page .realisations-item,
+.services-page .complementaire-card,
+.atelier-page .equipement-card,
+.atelier-page .service-atelier-item {
+  animation:slideInUp 0.6s ease-out both;
+}
+
+.realisations-page .avant-apres-item,
+.realisations-page .etude-card,
+.realisations-page .temoignage-card {
+  animation:slideInUp 0.6s ease-out both;
+}
+
+.index-page .avis-item {
+  animation:scaleIn 0.6s ease-out both;
+}
+
+.atelier-page .localisation-info {
+  animation:slideInUp 0.6s ease-out both;
+}
+
+/* Image animations within cards */
+.service-card img,
+.realisations-item img,
+.equipement-card img {
+  transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+.service-card:hover img,
+.realisations-item:hover img,
+.equipement-card:hover img {
+  transform:scale(1.05);
+  filter:brightness(1.1);
+}
+
+/* ========================================================= */
+/* === SERVICE DETAIL ANIMATIONS ========================== */
+/* ========================================================= */
+
+.services-page .service-detail-text h3 {
+  animation:slideInLeft 0.7s ease-out both;
+}
+
+.services-page .service-detail-text p {
+  animation:slideInLeft 0.7s ease-out 0.1s both;
+}
+
+.services-page .service-features li {
+  animation:slideInLeft 0.6s ease-out both;
+}
+
+.services-page .service-detail-content img {
+  animation:slideInRight 0.7s ease-out both;
+  transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.services-page .service-detail-inverted .service-detail-text h3 {
+  animation-name:slideInRight;
+}
+
+.services-page .service-detail-inverted .service-detail-text p {
+  animation-name:slideInRight;
+}
+
+.services-page .service-detail-inverted .service-detail-content img {
+  animation-name:slideInLeft;
+}
+
+@media (max-width:900px) {
+  .services-page .service-detail-text h3,
+  .services-page .service-detail-text p,
+  .services-page .service-detail-inverted .service-detail-text h3,
+  .services-page .service-detail-inverted .service-detail-text p {
+    animation-name:slideInUp;
+  }
+
+  .services-page .service-detail-content img,
+  .services-page .service-detail-inverted .service-detail-content img {
+    animation-name:slideInUp;
+  }
+}
+
+/* ========================================================= */
+/* === FORM ANIMATIONS ===================================== */
+/* ========================================================= */
+
+.index-page label {
+  animation:slideInUp 0.5s ease-out both;
+}
+
+.index-page input,
+.index-page textarea {
+  animation:slideInUp 0.5s ease-out both;
+  transition:border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.index-page input:nth-of-type(1) { animation-delay:0s; }
+.index-page input:nth-of-type(2) { animation-delay:0.1s; }
+.index-page input:nth-of-type(3) { animation-delay:0.2s; }
+.index-page textarea { animation-delay:0.3s; }
+
+.index-page input:focus,
+.index-page textarea:focus {
+  outline:none;
+  border-color:#c7a45b;
+  box-shadow:0 0 0 3px rgba(199,167,91,0.1);
+}
+
+/* ========================================================= */
+/* === FOOTER ANIMATIONS ================================== */
+/* ========================================================= */
+
+footer {
+  animation:slideInUp 0.6s ease-out;
+}
+
+.footer-section h4 {
+  animation:fadeIn 0.7s ease-out;
+}
+
+.footer-links li {
+  animation:slideInLeft 0.6s ease-out both;
+}
+
+.footer-links li:nth-child(1) { animation-delay:0.1s; }
+.footer-links li:nth-child(2) { animation-delay:0.15s; }
+.footer-links li:nth-child(3) { animation-delay:0.2s; }
+.footer-links li:nth-child(4) { animation-delay:0.25s; }
+
+.social-links a {
+  animation:scaleIn 0.5s ease-out both;
+  transition:background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:nth-child(1) { animation-delay:0.1s; }
+.social-links a:nth-child(2) { animation-delay:0.15s; }
+.social-links a:nth-child(3) { animation-delay:0.2s; }
+.social-links a:nth-child(4) { animation-delay:0.25s; }
+
+.social-links a:hover {
+  transform:translateY(-3px);
+  background:#c7a45b;
+  color:#050608;
+}
+
+/* ========================================================= */
+/* === TEXT LINK ANIMATIONS =============================== */
+/* ========================================================= */
+
+.footer-links a,
+.read-more {
+  position:relative;
+  transition:color 0.3s ease;
+}
+
+.footer-links a::after,
+.read-more::after {
+  content:"";
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#c7a45b;
+  transition:width 0.3s ease;
+}
+
+.footer-links a:hover::after,
+.read-more:hover::after {
+  width:100%;
+}
+
+/* ========================================================= */
+/* === CARD HOVER ANIMATIONS ============================== */
+/* ========================================================= */
+
+.service-card,
+.realisations-item,
+.equipement-card,
+.service-atelier-item,
+.temoignage-card,
+.complementaire-card {
+  transition:transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+             box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.realisations-item:hover,
+.equipement-card:hover,
+.service-atelier-item:hover,
+.temoignage-card:hover,
+.complementaire-card:hover {
+  transform:translateY(-6px);
+}
+
+.etude-card {
+  transition:transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+             box-shadow 0.3s ease;
+}
+
+.etude-card:hover {
+  transform:translateY(-6px);
+}
+
+/* ========================================================= */
+/* === SCROLL-TRIGGERED ANIMATION CLASSES ================ */
+/* ========================================================= */
+
+/* These classes are applied via JavaScript with IntersectionObserver */
+.scroll-animate-fade {
+  opacity:0;
+  animation:fadeIn 0.8s ease-out forwards;
+}
+
+.scroll-animate-slide-up {
+  opacity:0;
+  animation:slideInUp 0.8s ease-out forwards;
+}
+
+.scroll-animate-slide-left {
+  opacity:0;
+  animation:slideInLeft 0.8s ease-out forwards;
+}
+
+.scroll-animate-slide-right {
+  opacity:0;
+  animation:slideInRight 0.8s ease-out forwards;
+}
+
+/* ========================================================= */
+/* === LOADING SKELETON ANIMATIONS ======================= */
+/* ========================================================= */
+
+.skeleton {
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,0.1) 25%,
+    rgba(255,255,255,0.2) 50%,
+    rgba(255,255,255,0.1) 75%
+  );
+  background-size:200% 100%;
+  animation:shimmer 2s infinite;
+}
+
+.skeleton-text {
+  height:1rem;
+  margin-bottom:0.75rem;
+  border-radius:4px;
+}
+
+.skeleton-image {
+  width:100%;
+  height:170px;
+  border-radius:10px;
+  margin-bottom:1rem;
+}
+
+/* ========================================================= */
+/* === RESPONSIVE ANIMATIONS ============================= */
+/* ========================================================= */
+
+@media (max-width:900px) {
+  .service-detail-section { margin-bottom:3.5rem; }
+}
+
+@media (max-width:600px) {
+  /* Slightly faster animations on mobile for better perception */
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right {
+    animation-duration:0.6s;
+  }
+
+  .index-page .service-card,
+  .index-page .realisations-item {
+    animation-duration:0.5s;
+  }
+}
+
+/* ========================================================= */
+/* === FOCUS VISIBLE FOR ACCESSIBILITY =================== */
+/* ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline:2px solid #c7a45b;
+  outline-offset:2px;
+  animation:pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% { outline-width:2px; }
+  50% { outline-width:3px; }
+  100% { outline-width:2px; }
 }
