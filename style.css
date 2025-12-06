@@ -1117,7 +1117,7 @@ footer {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(5,6,8,0.7), rgba(5,6,8,0.99));
+  background:linear-gradient(to bottom, rgba(5,6,8,0.5), rgba(5,6,8,0.99));
   z-index:0;
 }
 
@@ -1199,11 +1199,25 @@ footer {
 }
 
 .services-page .service-detail-inverted .service-detail-content {
-  direction:rtl;
+  direction:ltr;
 }
 
 .services-page .service-detail-inverted .service-detail-text {
   direction:ltr;
+}
+
+@media (min-width:901px) {
+  .services-page .service-detail-inverted .service-detail-content {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .services-page .service-detail-inverted .service-detail-content > :first-child {
+    order:2;
+  }
+
+  .services-page .service-detail-inverted .service-detail-content > :last-child {
+    order:1;
+  }
 }
 
 .services-page .service-detail-text h3 {
