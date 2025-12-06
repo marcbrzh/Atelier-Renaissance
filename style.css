@@ -47,7 +47,6 @@ header {
   justify-content:space-between;
   align-items:center;
   box-shadow:0 2px 6px rgba(0,0,0,0.25);
-  animation:slideInDown 0.5s ease-out;
 }
 
 header > * {
@@ -60,7 +59,7 @@ header > * {
   display:flex;
   align-items:center;
   height:100%;
-  transition:opacity 0.3s ease;
+  transition:opacity 0.2s;
 }
 .logo-link:hover { opacity:0.8; }
 
@@ -135,7 +134,7 @@ nav a {
   font-weight:500;
   font-size:0.8rem !important;
   border-radius:6px;
-  transition:color 0.3s ease;
+  transition:color 0.18s;
   width:100%;
   display:block;
   letter-spacing:0.04em;
@@ -162,7 +161,6 @@ nav a.active::after {
   height:2px;
   border-radius:999px;
   background:#c7a45b;
-  animation:scaleIn 0.3s ease-out;
 }
 
 .cta-nav {
@@ -230,36 +228,14 @@ nav a.active::after {
   border:none;
   border-radius:999px;
   font-weight:600;
-  transition:background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:background 0.3s, transform 0.2s, box-shadow 0.2s;
   display:inline-block;
   box-shadow:0 8px 18px rgba(0,0,0,0.25);
   cursor:pointer;
-  position:relative;
-  overflow:hidden;
 }
-
-.btn::before {
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:0;
-  height:0;
-  border-radius:50%;
-  background:rgba(255,255,255,0.3);
-  transform:translate(-50%, -50%);
-  transition:width 0.6s, height 0.6s;
-}
-
 .btn:hover {
   background:#9b7f42;
   transform:translateY(-2px);
-  box-shadow:0 12px 24px rgba(0,0,0,0.35);
-}
-
-.btn:active::before {
-  width:300px;
-  height:300px;
 }
 
 /* ========================================================= */
@@ -272,7 +248,6 @@ footer {
   padding:4rem 1.5rem 1.5rem;
   margin-top:6rem;
   border-top:1px solid rgba(199,167,91,0.2);
-  animation:slideInUp 0.6s ease-out;
 }
 
 .footer-content {
@@ -895,6 +870,31 @@ footer {
 
 .realisations-page .intro-realisations {
   display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:left;
+}
+
+.realisations-page .intro-realisations h2 {
+  color:#c7a45b;
+  margin-bottom:1.5rem;
+  font-size:1.7rem;
+  font-family:'Playfair Display', serif;
+}
+
+.realisations-page .intro-realisations .intro-text { max-width:800px; }
+
+.realisations-page .intro-realisations p {
+  color:#d4d4d4;
+  font-size:0.98rem;
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+
+.realisations-page .intro-realisations p:last-child {
+  margin-bottom:0;
+}
+
 /* GALERIE AVANT/APRÈS */
 .realisations-page .galerie-avant-apres h2 {
   font-family:'Playfair Display', serif;
@@ -1765,4 +1765,514 @@ footer {
   .realisations-page .hero {
     height:80vh;
   }
+}
+
+/* ========================================================= */
+/* === ANIMATIONS & KEYFRAMES ============================ */
+/* ========================================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(199, 167, 91, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(199, 167, 91, 0.5);
+  }
+}
+
+/* ========================================================= */
+/* === SCROLL REVEAL ANIMATION DEFAULTS ================== */
+/* ========================================================= */
+
+section > h2,
+.section-intro,
+.atelier-text,
+.intro-text,
+.service-card,
+.realisations-item,
+.avis-item,
+.avant-apres-item,
+.etude-card,
+.temoignage-card,
+.complementaire-card,
+.equipement-card,
+.service-atelier-item,
+.localisation-info,
+.service-detail-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.33, 0.66, 0.66, 1), 
+              transform 0.6s cubic-bezier(0.33, 0.66, 0.66, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+/* Animate in state */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Specific animations for different element types */
+section > h2 {
+  animation: slideInDown 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: var(--stagger-delay, 0s);
+}
+
+.section-intro {
+  animation: slideInUp 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.service-card,
+.realisations-item,
+.complementaire-card,
+.equipement-card {
+  animation: scaleIn 0.6s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: var(--stagger-delay, 0s);
+}
+
+.avis-item,
+.temoignage-card {
+  animation: slideInUp 0.6s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: var(--stagger-delay, 0s);
+}
+
+/* ========================================================= */
+/* === IMAGE LOADING ANIMATION ============================ */
+/* ========================================================= */
+
+img {
+  opacity: 0.8;
+  transition: opacity 0.4s ease-out;
+}
+
+img.image-loaded {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+img[data-src] {
+  background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ========================================================= */
+/* === BUTTON RIPPLE EFFECT ============================== */
+/* ========================================================= */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: rippleEffect 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ========================================================= */
+/* === FORM FOCUS ANIMATIONS ============================= */
+/* ========================================================= */
+
+.index-page input,
+.index-page textarea {
+  position: relative;
+  background: #0d0f14;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.index-page input:focus,
+.index-page textarea:focus {
+  background: #131820;
+  border-color: #c7a45b;
+  box-shadow: 0 0 0 3px rgba(199, 167, 91, 0.1);
+}
+
+.index-page input::placeholder,
+.index-page textarea::placeholder {
+  transition: color 0.3s ease;
+}
+
+.index-page input:focus::placeholder,
+.index-page textarea:focus::placeholder {
+  color: #666;
+}
+
+/* ========================================================= */
+/* === LINK HOVER ANIMATIONS ============================= */
+/* ========================================================= */
+
+.footer-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #c7a45b;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* ========================================================= */
+/* === CARD HOVER & INTERACTION STATES =================== */
+/* ========================================================= */
+
+.service-card,
+.realisations-item,
+.complementaire-card,
+.equipement-card,
+.avis-item,
+.temoignage-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  will-change: transform;
+}
+
+.service-card:hover,
+.realisations-item:hover,
+.complementaire-card:hover,
+.equipement-card:hover,
+.avis-item:hover,
+.temoignage-card:hover {
+  border-color: rgba(199, 167, 91, 0.4);
+}
+
+/* ========================================================= */
+/* === HEADER ANIMATIONS ================================= */
+/* ========================================================= */
+
+header {
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+nav a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #c7a45b;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+nav a:hover::before,
+nav a:focus::before {
+  width: 100%;
+}
+
+/* ========================================================= */
+/* === HERO SECTION ANIMATIONS =========================== */
+/* ========================================================= */
+
+.hero-content h1 {
+  animation: slideInDown 0.8s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s backwards;
+}
+
+.hero-content p {
+  animation: slideInUp 0.8s cubic-bezier(0.33, 0.66, 0.66, 1) 0.4s backwards;
+}
+
+.hero-content .btn {
+  animation: scaleIn 0.6s cubic-bezier(0.33, 0.66, 0.66, 1) 0.6s backwards;
+}
+
+/* ========================================================= */
+/* === ACCESSIBILITY: REDUCED MOTION SUPPORT ============= */
+/* ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .service-card,
+  .realisations-item,
+  .complementaire-card,
+  .equipement-card,
+  .avis-item,
+  .temoignage-card,
+  section > h2,
+  .section-intro,
+  .atelier-text,
+  .intro-text,
+  .avant-apres-item,
+  .etude-card,
+  .temoignage-card,
+  .service-atelier-item,
+  .localisation-info,
+  .service-detail-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========================================================= */
+/* === KEYBOARD NAVIGATION FOCUS STYLES ================== */
+/* ========================================================= */
+
+body.keyboard-nav *:focus-visible {
+  outline: 2px solid #c7a45b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+body.keyboard-nav .btn:focus-visible,
+body.keyboard-nav a:focus-visible {
+  outline: 2px dashed #c7a45b;
+  outline-offset: 3px;
+}
+
+/* ========================================================= */
+/* === LOADING STATE ANIMATIONS ========================== */
+/* ========================================================= */
+
+.btn:disabled {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ========================================================= */
+/* === SMOOTH TRANSITIONS FOR COMMON PROPERTIES ========== */
+/* ========================================================= */
+
+a {
+  transition: color 0.25s ease;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* ========================================================= */
+/* === TAG ANIMATIONS ====================================== */
+/* ========================================================= */
+
+.projet-tags em {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.projet-tags em:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(199, 167, 91, 0.2);
+}
+
+/* ========================================================= */
+/* === SERVICE DETAIL CONTENT ANIMATIONS ================= */
+/* ========================================================= */
+
+.service-detail-text {
+  animation: slideInLeft 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: 0s;
+  opacity: 0;
+}
+
+.service-detail-content img {
+  animation: slideInRight 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.service-detail-inverted .service-detail-text {
+  animation: slideInRight 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+}
+
+.service-detail-inverted .service-detail-content img {
+  animation: slideInLeft 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+}
+
+/* ========================================================= */
+/* === WILL-CHANGE OPTIMIZATION ========================== */
+/* ========================================================= */
+
+.service-card,
+.realisations-item,
+.complementaire-card,
+.equipement-card,
+.avis-item,
+.btn {
+  will-change: transform, box-shadow;
+}
+
+/* Remove will-change after animation */
+.animate-in {
+  will-change: auto;
+}
+
+/* ========================================================= */
+/* === MOBILE ANIMATION OPTIMIZATIONS ==================== */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+  .card:hover {
+    transform: translateY(-2px) !important;
+  }
+
+  /* Reduce stagger delay on mobile for faster load feel */
+  .service-card,
+  .realisations-item,
+  .complementaire-card,
+  .equipement-card {
+    --stagger-delay: calc(var(--stagger-delay) * 0.5) !important;
+  }
+}
+
+/* ========================================================= */
+/* === FOOTER ANIMATION ================================== */
+/* ========================================================= */
+
+footer {
+  animation: slideInUp 0.8s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.footer-section {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================================= */
+/* === CTASECTION ANIMATIONS ============================= */
+/* ========================================================= */
+
+.cta-section {
+  animation: slideInUp 0.8s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.cta-section h2 {
+  animation: slideInDown 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) 0.1s backwards;
+}
+
+.cta-section p {
+  animation: slideInUp 0.7s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s backwards;
+}
+
+.cta-section .btn {
+  animation: scaleIn 0.6s cubic-bezier(0.33, 0.66, 0.66, 1) 0.3s backwards;
 }
