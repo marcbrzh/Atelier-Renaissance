@@ -133,7 +133,7 @@ if (header) {
 // === BUTTON RIPPLE EFFECT ==============================
 // =========================================================
 
-document.querySelectorAll('.btn').forEach(button => {
+document.querySelectorAll('.btn:not(.cta-nav)').forEach(button => {
   button.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
     const rect = this.getBoundingClientRect();
