@@ -1,42 +1,54 @@
-# Atelier Renaissance — Site vitrine statique
+# Atelier Renaissance
 
-Ce dépôt contient un modèle de site vitrine en français pour un restaurant fictif, **Atelier Renaissance**, inspiré d'une comfort food américaine revisitée avec des produits bretons. Le projet est 100 % statique (HTML/CSS/JS), prêt à être ouvert dans un navigateur ou déployé sur n'importe quel hébergement statique (GitHub Pages, Netlify, Vercel, etc.).
+[![Live Demo](https://img.shields.io/badge/demo-live-0a0a0a?style=for-the-badge&logo=vercel&logoColor=white)](https://your-demo-url.netlify.app/)
 
-## Pages incluses
-- **`index.html`** : page d'accueil avec héros, présentation rapide, plats phares, témoignages clients, formulaire de contact et bloc « Nous trouver ».
-- **`menu.html`** : carte détaillée (burgers, plats signatures, accompagnements, desserts) avec un héros dédié.
+An elegant showroom website for a high‑end automotive garage specializing in luxury and collector car paint restoration. Based in **Bretagne**, the design reinforces visual prestige, precision, and the delicate craft of revival through a refined, gallery‑like aesthetic.
 
-## Fonctionnalités clés
-- **Navigation responsive** avec hamburger et blocage du scroll en arrière-plan quand le menu est ouvert (`js/script.js`, classe `body.no-scroll`).
-- **Identité visuelle cohérente** : palette bordeaux/crème, typographies Google Fonts (Playfair Display + Roboto).
-- **Mise en avant des plats** : grilles d'items avec visuels, descriptions et prix.
-- **Contact prêt à l'emploi** : formulaire branché sur Formspree (remplacer `yourformid` par votre ID) et lien Google Maps vers l'adresse du restaurant.
+---
 
-## Arborescence rapide
-```
-/
-├─ index.html        # Page d'accueil
-├─ menu.html         # Carte complète
-├─ style.css         # Styles globaux + spécifiques par page
-├─ js/
-│  └─ script.js      # Ouverture/fermeture du menu mobile
-├─ images/           # Visuels (héros, plats, favicon, etc.)
-└─ SITE_AUDIT.md     # Audit existant et backlog de pistes d'amélioration
-```
+## 📖 Table of Contents
 
-## Prise en main
-1. **Cloner ou télécharger** le dépôt puis ouvrir le dossier dans votre éditeur :
-   ```bash
-   git clone <url-du-depot>
-   cd atelier-renaissance
-   ```
-2. **Lancer en local** en ouvrant `index.html` ou `menu.html` dans votre navigateur (ou via l'extension Live Server de VS Code).
-3. **Personnaliser** :
-   - Remplacez les textes (nom du restaurant, descriptions, prix) dans les fichiers HTML.
-   - Adaptez les couleurs et polices dans `style.css`.
-   - Remplacez `yourformid` dans `index.html` par votre ID Formspree pour activer le formulaire.
-   - Mettez vos propres images dans `images/` (préférez WebP/AVIF pour de meilleures performances).
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Design Principles](#-design-principles)
+- [Deployment](#-deployment)
+- [Project Structure](#-project-structure)
 
-## Déploiement rapide (exemples)
-- **GitHub Pages** : poussez la branche principale, puis activez Pages sur le dossier racine du dépôt.
-- **Netlify/Vercel** : importez le dépôt, choisissez un déploiement statique (pas de build requis), la racine `/` suffit.
+---
+
+## 🏠 Overview
+
+**Atelier Renaissance** is a digital showroom for a luxury paint restoration garage serving collectors and connoisseurs across Brittany and beyond. The website is designed to evoke the same meticulous care, silence, and reverence found in a high‑end restoration workshop, every visual decision reinforces craftsmanship, heritage, and the transformation of metal into art.
+
+This project demonstrates my ability to craft a brand experience that speaks to exclusivity, trust, and uncompromising quality.
+
+---
+
+## ✨ Features
+
+- **Gallery‑First Layout** – Designed to let stunning before/after visuals and high‑resolution detail shots take centre stage.
+- **Elegant Visual Language** – A restrained, sophisticated palette with subtle luminance that echoes polished paintwork.
+- **Fully Responsive** – Optimised for all devices, from desktop to mobile.
+- **Performance‑First** – Lightweight code, optimised assets, and zero unnecessary dependencies.
+- **Semantic HTML & Accessibility** – Built with screen readers and inclusive design in mind.
+- **Modular SCSS** – Maintainable, scalable styling.
+- **Clear Inquiry Path** – Designed to guide discerning clients toward requesting a consultation.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: HTML5, Vanilla JavaScript (ES6+)
+- **Styling**: CSS3
+- **Version Control**: Git & GitHub
+- **Deployment**: Netlify
+
+---
+
+## 🎯 Design Principles
+
+- **Performance‑first** – Fast load times, lean DOM, and lazily loaded assets.
+- **Responsive by default** – Seamless experience across all breakpoints.
+- **Accessible** – Semantic HTML5, proper heading hierarchy, `alt` text, and ARIA labels where needed.
+- **Maintainable** – Modular components, consistent naming, and well‑commented code.
